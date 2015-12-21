@@ -36,16 +36,12 @@ class Operation:
                 user_input_pay = int(input("输入要还款的金额："))
             else:
                 get_edu[-2] = '-'+str(user_input_pay)
-                get_edu[2] = int(get_edu[2]) + user_input_pay
-                print(get_edu)
-                get_str = ' '.join(get_edu)
-                # print(type(get_edu))
-                print(get_str)
-                n = '\t'
-                new_user = n.join(str(get_edu))
-                print(new_user)
-                # get_file.write(new_user)
-                # get_file.close()
+                get_edu[2] = str(int(get_edu[2]) + user_input_pay)
+                get_edu[3] = '还款'
+                n = '\t\t'
+                new_user = n.join(get_edu)
+                get_file.write('\n'+new_user)
+                get_file.close()
 
 if __name__ == '__main__':
     get = Operation()
